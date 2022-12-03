@@ -23,16 +23,21 @@ public class Day3 {
                     }
                 }
             }
-            int commonCharValue = 0;
-            if (commonChar >= 'a' && commonChar <= 'z') {
-                commonCharValue = commonChar - 'a' + 1;
-            } else if (commonChar >= 'A' && commonChar <= 'Z') {
-                commonCharValue = commonChar - 'A' + 27;
-            }
-            sum += commonCharValue;
+            sum = getSum(sum, commonChar);
         }
 
         System.out.println(sum);
         
+    }
+
+    static int getSum(int sum, char commonChar) {
+        int commonCharValue = 0;
+        if (commonChar >= 'a' && commonChar <= 'z') {
+            commonCharValue = commonChar - 'a' + 1;
+        } else if (commonChar >= 'A' && commonChar <= 'Z') {
+            commonCharValue = commonChar - 'A' + 27;
+        }
+        sum += commonCharValue;
+        return sum;
     }
 }
